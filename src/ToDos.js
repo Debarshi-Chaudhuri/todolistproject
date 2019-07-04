@@ -6,10 +6,10 @@ class ToDos extends Component{
     super(props)
     this.state={elements:[],s:""};
   }
-  addtolist=(event)=>{
+  addtolist=()=>{
+    if(this.state.s!=='')
     this.setState({elements:this.state.elements.concat(this.state.s),s:""})
-    
-    
+      
   }
   remove=(index)=>{
     console.log(index);
