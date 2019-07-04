@@ -6,9 +6,8 @@ class ToDos extends Component{
     super(props)
     this.state={elements:[],s:""};
   }
-  addtolist=()=>{
-    this.setState((curr)=>{return {elements:curr.elements.concat(curr.s)}},
-                  ()=>{console.log(this.state.elements,this.state.i)})
+  addtolist=(event)=>{
+    this.setState({elements:this.state.elements.concat(this.state.s),s:""})
     
     
   }
@@ -27,7 +26,7 @@ class ToDos extends Component{
   
   render(){
     return(<div>
-      <ToDoInput data={this.input} change={this.addtolist}/>
+      <ToDoInput data={this.input} change={this.addtolist} val={this.state.s}/>
       <ToDoLists delete={this.remove} name={this.state.elements}/>
         </div>
     );

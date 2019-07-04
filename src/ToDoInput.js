@@ -3,7 +3,7 @@ class ToDoInput extends Component{
   
   render(){
     return(<div>
-      <input type="text" onChange={this.props.data}></input>
+      <input type="text" value={this.props.val} onChange={this.props.data} placeholder="Enter text here"></input>
       <button onClick={this.props.change}>Add To List</button>
     </div>
     );
